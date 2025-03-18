@@ -13,36 +13,6 @@ function mostrarAlerta2() {
     }
 }
 
-// function calcularSalario() {
-//     const salarioMinimoActual = 1423500;
-
-//     // Obtiene el factor de la categoría docente y multiplica por el salario mínimo actual
-//     const factorCategoria = parseFloat(document.getElementById("categoria_docente").value) || 0;
-//     const salarioBase = salarioMinimoActual * factorCategoria;
-
-//     const puntos = parseFloat(document.getElementById("puntos").value) || 0;
-//     const bonificacionPostgrado = parseFloat(document.getElementById("c_postgrado").value) || 0;
-//     const bonificacionSemillero = parseFloat(document.getElementById("c_semillero").value) || 0;
-
-//     const valorPorPunto = 6556; // Valor de cada punto en pesos colombianos
-//     const totalPuntos = puntos * valorPorPunto; // Cálculo del valor total de los puntos
-
-//     let salarioTotal = salarioBase + totalPuntos; // Se suman los puntos al salario base
-
-//     // Aplicar las bonificaciones correctamente como porcentaje del salarioTotal
-//     salarioTotal += salarioTotal * bonificacionPostgrado;
-//     salarioTotal += salarioTotal * bonificacionSemillero;
-
-//     // Formateamos el salario para mostrarlo en pesos colombianos
-//     let salarioFormateado = Math.round(salarioTotal).toLocaleString("es-CO");
-
-//     // Mostramos el resultado en la página y en una alerta
-//     document.getElementById("resultado").textContent = `Salario Total: ${salarioFormateado} COP`;
-//     alert(`Salario Total: ${salarioFormateado} COP`);
-
-//     setTimeout(limpiarCampos(), 3000);
-// }
-
 
 function calcularSalario() {
     salarioMinimoActual = 1423500;
@@ -53,7 +23,6 @@ function calcularSalario() {
     salarioMinimoActual += salarioMinimoActual*bonificacionSemillero;
 
 
-    // Obtiene el factor de la categoría docente y multiplica por el salario mínimo actual
     const factorCategoria = parseFloat(document.getElementById("categoria_docente").value) || 0;
     const salarioBase = salarioMinimoActual * factorCategoria;
 
@@ -61,7 +30,7 @@ function calcularSalario() {
     // const bonificacionPostgrado = parseFloat(document.getElementById("c_postgrado").value) || 0;
     // const bonificacionSemillero = parseFloat(document.getElementById("c_semillero").value) || 0;
 
-    const valorPorPunto = 6556; // Valor de cada punto en pesos colombianos
+    const valorPorPunto = 20895; // Valor de cada punto en pesos colombianos
     const totalPuntos = puntos * valorPorPunto; // Cálculo del valor total de los puntos
 
     let salarioTotal = salarioBase + totalPuntos; // Se suman los puntos al salario base
@@ -82,26 +51,10 @@ function calcularSalario() {
 
 
 
-// function actualizarPuntos() {
-//     let total = 0;
-
-//     // Obtener todos los select y sumar solo los que tienen opciones con id="punto"
-//     document.querySelectorAll("select").forEach(select => {
-//         const selectedOption = select.options[select.selectedIndex];
-//         if (selectedOption && selectedOption.id === "punto") {
-//             total += parseFloat(selectedOption.value) || 0;
-//         }
-//     });
-
-//     document.getElementById("puntos").value = total; // Mostrar el total en el input
-// }
-
-
 
 function actualizarPuntos() {
     let total = 0;
 
-    // Obtener todas las publicaciones seleccionadas con sus cantidades
     document.querySelectorAll("#lista_publicaciones li").forEach(li => {
         let puntos = parseFloat(li.dataset.puntos) || 0;
         let cantidad = parseInt(li.querySelector(".cantidad").value) || 1;
@@ -115,10 +68,9 @@ function actualizarPuntos() {
                 }
             });
 
-    document.getElementById("puntos").value = total; // Mostrar el total en el input
+    document.getElementById("puntos").value = total;
 }
 
-// Agregar eventos a todos los select para actualizar los puntos en tiempo real
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("select").forEach(select => {
         select.addEventListener("change", actualizarPuntos);
@@ -138,7 +90,6 @@ function cerrarModal() {
 document.getElementById("area_desempeño").addEventListener("change", function () {
     let valorSeleccionado = this.value;
 
-    // Mostrar modal solo si se selecciona "Especialización" o "Especialización(2)"
     if (valorSeleccionado === "40" || valorSeleccionado === "20") {
         abrirModal();
     }
@@ -159,24 +110,6 @@ function limpiarCampos() {
     document.getElementsByClassName("acntidad").style.display = "none";
 }
 
-// function agregarPublicacion() {
-//     let select = document.getElementById("tipo_publicacion");
-//     let lista = document.getElementById("lista_publicaciones");
-//     let opcionSeleccionada = select.options[select.selectedIndex];
-
-//     if (opcionSeleccionada.value !== "" && !document.getElementById(`pub-${opcionSeleccionada.value}`)) {
-//         let li = document.createElement("li");
-//         li.id = `pub-${opcionSeleccionada.value}`;
-//         li.innerHTML = `
-//             <span>${opcionSeleccionada.text} - Puntos: ${opcionSeleccionada.value}</span>
-//             <input type="number" min="1" max="5" value="1" class="cantidad">
-//             <button onclick="this.parentNode.remove()">❌</button>
-//         `;
-//         lista.appendChild(li);
-//     }
-// }
-
-
 
 function agregarPublicacion() {
     let select = document.getElementById("tipo_publicacion");
@@ -186,7 +119,7 @@ function agregarPublicacion() {
     if (opcionSeleccionada.value !== "" && !document.getElementById(`pub-${opcionSeleccionada.value}`)) {
         let li = document.createElement("li");
         li.id = `pub-${opcionSeleccionada.value}`;
-        li.dataset.puntos = opcionSeleccionada.value; // Guardamos los puntos como atributo
+        li.dataset.puntos = opcionSeleccionada.value;
 
         li.innerHTML = `
             <span>${opcionSeleccionada.text} - Puntos: ${opcionSeleccionada.value}</span>
@@ -197,7 +130,6 @@ function agregarPublicacion() {
     }
 }
 
-// Agregar eventos a todos los select para actualizar los puntos en tiempo real
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("select").forEach(select => {
         select.addEventListener("change", actualizarPuntos);
