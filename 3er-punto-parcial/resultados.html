@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial - Resultados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora Salarial Docente</h1>
+            <p>Basada en el Decreto 1279 de 2002</p>
+        </header>
+        
+        <div class="card">
+            <div class="card-content">
+                <h2>Resultados del Cálculo Salarial</h2>
+                
+                <div class="info-docente">
+                    <h3>Información del Docente</h3>
+                    <p><strong>Nombre:</strong> <span id="nombreDocente"></span></p>
+                    <p><strong>Categoría:</strong> <span id="categoriaDocente"></span></p>
+                    <p><strong>Dedicación:</strong> <span id="dedicacionDocente"></span></p>
+                </div>
+                
+                <div class="resumen-puntos">
+                    <h3>Resumen de Puntos Salariales</h3>
+                    <table class="tabla-resultados">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Títulos de Pregrado</td>
+                                <td id="puntosPregrado">0</td>
+                            </tr>
+                            <tr>
+                                <td>Títulos de Posgrado</td>
+                                <td id="puntosPosgrado">0</td>
+                            </tr>
+                            <tr>
+                                <td>Categoría en el Escalafón</td>
+                                <td id="puntosCategoria">0</td>
+                            </tr>
+                            <tr>
+                                <td>Experiencia Calificada</td>
+                                <td id="puntosExperiencia">0</td>
+                            </tr>
+                            <tr>
+                                <td>Productividad Académica</td>
+                                <td id="puntosProductividad">0</td>
+                            </tr>
+                            <tr>
+                                <td>Cargos Académico-Administrativos</td>
+                                <td id="puntosCargos">0</td>
+                            </tr>
+                            <tr>
+                                <td>Desempeño Destacado</td>
+                                <td id="puntosDesempeño">0</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Total Puntos Salariales</strong></td>
+                                <td id="puntosTotales"><strong>0</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="resultado-salarial">
+                    <h3>Resultado Salarial</h3>
+                    <div class="valor-punto">
+                        <p>Valor del punto salarial: $<span id="valorPunto">20.895</span></p>
+                    </div>
+                    <div class="salario-mensual">
+                        <p>Salario mensual: $<span id="salarioMensual">0</span></p>
+                    </div>
+                </div>
+                
+                <div class="detalles-calculo">
+                    <h3>Detalles del Cálculo</h3>
+                    <div class="accordion" id="detallesCalculo">
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">Títulos Académicos</h4>
+                            <div class="accordion-content" id="detalleTitulos"></div>
+                        </div>
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">Experiencia Calificada</h4>
+                            <div class="accordion-content" id="detalleExperiencia"></div>
+                        </div>
+                        <div class="accordion-item">
+                            <h4 class="accordion-header">Productividad Académica</h4>
+                            <div class="accordion-content" id="detalleProductividad"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="notas-aclaratorias">
+                    <h3>Notas Aclaratorias</h3>
+                    <ul>
+                        <li>Este cálculo es una aproximación basada en el Decreto 1279 de 2002.</li>
+                        <li>Los topes máximos de puntos por productividad académica se han aplicado según la categoría docente.</li>
+                        <li>Para un cálculo oficial, consulte con la oficina de personal docente de su universidad.</li>
+                    </ul>
+                </div>
+                
+                <div class="buttons">
+                    <button id="btnNuevoCalculo" class="btn btn-primary">Nuevo Cálculo</button>
+                    <button id="btnImprimir" class="btn btn-secondary">Imprimir Resultados</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Calculadora basada en el Decreto 1279 de 2002 - Régimen Salarial y Prestacional de los Docentes de las Universidades Estatales</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

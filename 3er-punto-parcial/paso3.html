@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial - Experiencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora Salarial Docente</h1>
+            <p>Basada en el Decreto 1279 de 2002</p>
+        </header>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step completed">1</div>
+                <div class="step completed">2</div>
+                <div class="step active">3</div>
+                <div class="step">4</div>
+            </div>
+            <div class="step-labels">
+                <div class="step-label completed">Información Básica</div>
+                <div class="step-label completed">Formación Académica</div>
+                <div class="step-label active">Experiencia</div>
+                <div class="step-label">Producción Académica</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Experiencia Calificada</h2>
+                
+                <div class="info-box">
+                    <h4>Información Importante:</h4>
+                    <ul>
+                        <li>Los años dedicados a estudios de posgrado no se contabilizan como experiencia (excepto para Medicina y Odontología).</li>
+                        <li>La experiencia debe ser posterior a la obtención del título universitario.</li>
+                        <li>Para experiencia de tiempo parcial, calcule el equivalente a tiempo completo.</li>
+                        <li>Si tiene fracciones de año, escríbalas en formato decimal (ejemplo: 2.5 años).</li>
+                    </ul>
+                </div>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="expInvestigacion">Años en experiencia de investigación:</label>
+                        <div class="input-group">
+                            <input type="number" id="expInvestigacion" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">6 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expDocencia">Años en experiencia docente universitaria:</label>
+                        <div class="input-group">
+                            <input type="number" id="expDocencia" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">4 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expDireccion">Años en cargos de dirección académica:</label>
+                        <div class="input-group">
+                            <input type="number" id="expDireccion" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">4 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expProfesional">Años en experiencia profesional (no docente):</label>
+                        <div class="input-group">
+                            <input type="number" id="expProfesional" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">3 puntos por año</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Cargos de Dirección Académico-Administrativa</h3>
+                    <p class="info-text">Indique si ha ocupado alguno de estos cargos y por cuántos años.</p>
+                    
+                    <div class="form-group">
+                        <label for="cargoRector">Rector:</label>
+                        <div class="input-group">
+                            <input type="number" id="cargoRector" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">11 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargoVicerrector">Vicerrector/Secretario General/Director Administrativo:</label>
+                        <div class="input-group">
+                            <input type="number" id="cargoVicerrector" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">9 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargoDecano">Decano/Director de División/Jefe de Oficina:</label>
+                        <div class="input-group">
+                            <input type="number" id="cargoDecano" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">6 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargoVicedecano">Vicedecano/Director Administrativo de Sede:</label>
+                        <div class="input-group">
+                            <input type="number" id="cargoVicedecano" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">4 puntos por año</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cargoDirectorDpto">Director de Departamento/Escuela/Instituto/Centro:</label>
+                        <div class="input-group">
+                            <input type="number" id="cargoDirectorDpto" class="form-control" min="0" step="0.1" value="0">
+                            <span class="input-info">2 puntos por año</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button id="btnAnterior3" class="btn btn-secondary">Anterior</button>
+                    <button id="btnSiguiente3" class="btn btn-primary">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Calculadora basada en el Decreto 1279 de 2002 - Régimen Salarial y Prestacional de los Docentes de las Universidades Estatales</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

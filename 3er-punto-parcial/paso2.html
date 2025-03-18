@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial - Formación Académica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora Salarial Docente</h1>
+            <p>Basada en el Decreto 1279 de 2002</p>
+        </header>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step completed">1</div>
+                <div class="step active">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+            <div class="step-labels">
+                <div class="step-label completed">Información Básica</div>
+                <div class="step-label active">Formación Académica</div>
+                <div class="step-label">Experiencia</div>
+                <div class="step-label">Producción Académica</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Formación Académica</h2>
+                
+                <div class="form-section">
+                    <h3>Estudios de Pregrado</h3>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="pregrado" value="normal" checked> 
+                            Pregrado (178 puntos)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="radio" name="pregrado" value="medicina"> 
+                            Pregrado en Medicina Humana o Composición Musical (183 puntos)
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Estudios de Posgrado</h3>
+                    <p class="info-text">Nota: No se reconocen puntos por títulos de posgrado de nivel inferior al que ya tenga reconocido.</p>
+                    
+                    <div class="form-group">
+                        <label for="especializaciones">Especializaciones (1-2 años):</label>
+                        <div class="input-group">
+                            <input type="number" id="especializaciones" class="form-control" min="0" max="2" value="0">
+                            <span class="input-info">Hasta 20 puntos cada una</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="especializaciones3">Especializaciones (3 años o más):</label>
+                        <div class="input-group">
+                            <input type="number" id="especializaciones3" class="form-control" min="0" max="2" value="0">
+                            <span class="input-info">Hasta 30 puntos cada una</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="espMedicas">Especializaciones Clínicas en Medicina/Odontología:</label>
+                        <div class="input-group">
+                            <input type="number" id="espMedicas" class="form-control" min="0" max="5" value="0">
+                            <span class="input-info">15 puntos por año, máximo 75 puntos</span>
+                        </div>
+                        <div class="sub-form" id="espMedicasAnios" style="display: none;">
+                            <label>Años de duración:</label>
+                            <select id="aniosEspMedicas" class="form-control">
+                                <option value="1">1 año</option>
+                                <option value="2">2 años</option>
+                                <option value="3">3 años</option>
+                                <option value="4">4 años</option>
+                                <option value="5">5 años o más</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="maestrias">Maestrías:</label>
+                        <div class="input-group">
+                            <input type="number" id="maestrias" class="form-control" min="0" max="2" value="0">
+                            <span class="input-info">40 puntos cada una, máximo 60 puntos con dos maestrías</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="doctorados">Doctorados (Ph.D):</label>
+                        <div class="input-group">
+                            <input type="number" id="doctorados" class="form-control" min="0" max="2" value="0">
+                            <span class="input-info">80 puntos cada uno (120 si no tiene maestría)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button id="btnAnterior2" class="btn btn-secondary">Anterior</button>
+                    <button id="btnSiguiente2" class="btn btn-primary">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Calculadora basada en el Decreto 1279 de 2002 - Régimen Salarial y Prestacional de los Docentes de las Universidades Estatales</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

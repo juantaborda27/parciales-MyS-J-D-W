@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial - Producción Académica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora Salarial Docente</h1>
+            <p>Basada en el Decreto 1279 de 2002</p>
+        </header>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step completed">1</div>
+                <div class="step completed">2</div>
+                <div class="step completed">3</div>
+                <div class="step active">4</div>
+            </div>
+            <div class="step-labels">
+                <div class="step-label completed">Información Básica</div>
+                <div class="step-label completed">Formación Académica</div>
+                <div class="step-label completed">Experiencia</div>
+                <div class="step-label active">Producción Académica</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <h2>Producción Académica</h2>
+                
+                <div class="info-box">
+                    <h4>Información Importante:</h4>
+                    <ul>
+                        <li>El número de autores afecta el puntaje asignado a cada producto.</li>
+                        <li>Existen topes máximos de puntos por productividad según la categoría docente.</li>
+                        <li>Solo se reconocen puntos por productos que den crédito a la universidad.</li>
+                    </ul>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Artículos en Revistas Especializadas</h3>
+                    
+                    <div class="product-container">
+                        <h4>Artículos Completos (Full Paper)</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Revista A1 (15 puntos):</label>
+                                <input type="number" id="articulosA1" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresA1" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addA1">Agregar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Revista A2 (12 puntos):</label>
+                                <input type="number" id="articulosA2" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresA2" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addA2">Agregar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Revista B (8 puntos):</label>
+                                <input type="number" id="articulosB" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresB" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addB">Agregar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Revista C (3 puntos):</label>
+                                <input type="number" id="articulosC" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresC" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addC">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <h4>Comunicaciones Cortas (60% del puntaje)</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Tipo de revista:</label>
+                                <select id="tipoRevistaCorta" class="form-control">
+                                    <option value="A1">A1 (9 puntos)</option>
+                                    <option value="A2">A2 (7.2 puntos)</option>
+                                    <option value="B">B (4.8 puntos)</option>
+                                    <option value="C">C (1.8 puntos)</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <label>Cantidad:</label>
+                                <input type="number" id="cantidadCorta" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresCorta" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addCorta">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <h4>Reportes de caso/Revisiones/Cartas al editor (30% del puntaje)</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Tipo de revista:</label>
+                                <select id="tipoRevistaReporte" class="form-control">
+                                    <option value="A1">A1 (4.5 puntos)</option>
+                                    <option value="A2">A2 (3.6 puntos)</option>
+                                    <option value="B">B (2.4 puntos)</option>
+                                    <option value="C">C (0.9 puntos)</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <label>Cantidad:</label>
+                                <input type="number" id="cantidadReporte" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresReporte" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addReporte">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Libros</h3>
+                    
+                    <div class="product-container">
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Tipo de libro:</label>
+                                <select id="tipoLibro" class="form-control">
+                                    <option value="investigacion">Investigación (20 puntos)</option>
+                                    <option value="texto">Texto (15 puntos)</option>
+                                    <option value="ensayo">Ensayo (15 puntos)</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <label>Cantidad:</label>
+                                <input type="number" id="cantidadLibro" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresLibro" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addLibro">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3>Producción Técnica y Artística</h3>
+                    
+                    <div class="product-container">
+                        <h4>Patentes</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Cantidad (25 puntos c/u):</label>
+                                <input type="number" id="cantidadPatentes" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresPatente" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addPatente">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <h4>Producción Técnica</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Tipo:</label>
+                                <select id="tipoProduccion" class="form-control">
+                                    <option value="innovacion">Innovación tecnológica (15 puntos)</option>
+                                    <option value="adaptacion">Adaptación tecnológica (8 puntos)</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <label>Cantidad:</label>
+                                <input type="number" id="cantidadProduccion" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresProduccion" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addProduccion">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <h4>Software</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Cantidad (15 puntos c/u):</label>
+                                <input type="number" id="cantidadSoftware" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresSoftware" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addSoftware">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-container">
+                        <h4>Obras Artísticas</h4>
+                        <div class="product-row">
+                            <div class="product-col">
+                                <label>Tipo:</label>
+                                <select id="tipoObra" class="form-control">
+                                    <option value="original_int">Creación original - Internacional (20 puntos)</option>
+                                    <option value="original_nac">Creación original - Nacional (14 puntos)</option>
+                                    <option value="complementaria_int">Creación complementaria - Internacional (12 puntos)</option>
+                                    <option value="complementaria_nac">Creación complementaria - Nacional (8 puntos)</option>
+                                    <option value="interpretacion_int">Interpretación - Internacional (14 puntos)</option>
+                                    <option value="interpretacion_nac">Interpretación - Nacional (8 puntos)</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <label>Cantidad:</label>
+                                <input type="number" id="cantidadObra" class="form-control" min="0" value="0">
+                            </div>
+                            <div class="product-col">
+                                <label>Número de autores:</label>
+                                <select id="autoresObra" class="form-control">
+                                    <option value="1-3">1-3 autores</option>
+                                    <option value="4-5">4-5 autores</option>
+                                    <option value="6+">6 o más autores</option>
+                                </select>
+                            </div>
+                            <div class="product-col">
+                                <button class="btn btn-sm btn-add" id="addObra">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-list">
+                    <h3>Productos agregados</h3>
+                    <div id="listaProductos" class="product-items">
+                        <!-- Los productos agregados se mostrarán aquí -->
+                        <p class="empty-message">No hay productos agregados</p>
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <button id="btnAnterior4" class="btn btn-secondary">Anterior</button>
+                    <button id="btnCalcular" class="btn btn-success">Calcular Salario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Calculadora basada en el Decreto 1279 de 2002 - Régimen Salarial y Prestacional de los Docentes de las Universidades Estatales</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

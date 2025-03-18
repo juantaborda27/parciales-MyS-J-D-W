@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salario Profesor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <center><h2>Calculadora de Salario Profesor Ocasional</h2></center>
+
+        <center><label for="categoria">CATEGORIAS DOCEfNTE:</label></center>
+        <select id="categoria_docente" aria-placeholder="Seleccione una opción">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="2.645">Auxiliar de Tiempo Completo</option>
+            <option value="1.509">Auxiliar de Medio Tiempo</option>
+            <option value="3.125">Asistente de Tiempo Completo</option>
+            <option value="1.749">Asistente de Medio Tiempo</option>
+            <option value="3.606">Asociado de Tiempo Completo</option>
+            <option value="1.990">Asociado de Medio Tiempo</option>
+            <option value="3.918">Titular de Tiempo Completo</option>
+            <option value="2.146">Titular de Medio Tiempo</option>
+        </select>
+
+
+
+        
+        <label for="categoria">TITULOS EN EL AREA DE DESEMPEÑO:</label>
+        <select id="area_desempeño" aria-placeholder="Seleccione una opción">
+            <option value="">Seleccione una opción</option>
+            <option value="20" id="punto">Especialización(1)</option>
+            <option value="10" id="punto">Especialización(2)</option>
+            <option value="40" id="punto">Maestria(1)</option>
+            <option value="20" id="punto">Maestria(2)</option>
+            <option value="80" id="punto">Doctorado(1)</option>
+            <option value="40" id="punto">Doctorado(2)</option>
+            <option value="0" id="punto">No Posee</option>
+        </select>
+
+
+
+        <label for="categoria">CATEGORIA DEL DOCENTE</label>
+        <select id="categoria_docente" aria-placeholder="Seleccione una opción">
+            <option value="">Seleccione una opción</option>
+            <option value="27" id="punto">Auxiliar</option>
+            <option value="58" id="punto">Asistente</option>
+            <option value="74" id="punto">Asociado</option>
+            <option value="96" id="punto">Titular</option>
+        </select>
+
+        <div id="modal" class="modal">
+            <div class="modal-contenido">
+                <h2>🩺 Importante</h2>
+                <p>Las especializaciones clínicas en medicina humana y odontología se asimilan a las Maestrías.</p>
+                <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+            </div>
+        </div>
+
+        
+
+        <label id="subcategoria_label" for="subcategoria" style="display: none;">TIPO:</label>
+        <select id="subcategoria" style="display: none;"></select>
+
+        <center><label for="categoria">EXPERIENCIA CALIFICADA</label></center>
+        <p>¿LA EXPERIENCIA FUE EN INSTITUCIONES DE EDUCACION SUPERIOR?</p>
+        <select id="experiencia_calificada">
+            <option value="">Seleccione una opción</option>
+            <option value="4" id="punto">DOCENTE T.COMPLETO </option>
+            <option value="2" id="punto">DOCENTE MEDIO TIEMPO</option>
+            <option value="1" id="punto">DOCENTE CATEDRATICO</option>
+            <option value="2" id="punto">EXPERIENCIA PROFESIONAL</option>
+            <option value="0">No Posee</option>
+        </select>
+
+        <label for="categoria">Grupo de Investigación:</label>
+            <select id="g_investigacion">
+                <option value="">Seleccione una opción</option>
+                <option value="20" id="punto">A1</option>
+                <option value="15" id="punto">A</option>
+                <option value="12" id="punto">B</option>
+                <option value="10" id="punto">C</option>
+                <option value="6" id="punto">Reconocidos por MINCIENCIAS</option>
+                <option value="0">No Posee</option>
+            </select>
+        
+
+            <label for="categoria">Categoría como Investigador:</label>
+            <select id="c_investigador">
+                <option value="">Seleccione una opción</option>
+                <option value="10" id="punto">Investigador Senior</option>
+                <option value="5" id="punto">Investigador Asociado</option>
+                <option value="3" id="punto">Investigador Junior</option>
+                <option value="0">No Posee</option>
+            </select>
+
+
+            <!-- <label for="categoria">Seleccione el Tipo de Publicación:</label>
+            <select id="tipo_publicacion">
+                <option value="">Seleccione una opción</option>
+                <option value="10" id="punto">Artículos en revistas indexadas por Colciencias</option>
+                <option value="5" id="punto">Artículos en medios reconocidos</option>
+                <option value="20" id="punto">Libros con ISBN</option>
+                <option value="5" id="punto">Capítulos de libros con ISBN</option>
+                <option value="10" id="punto">Módulos con ISBN</option>
+                <option value="20" id="punto">Software registrado con D.A</option>
+                <option value="60" id="punto">Patentes</option>
+                <option value="5" id="punto">Asesor de monografías o proyectos de grado</option>
+                <option value="2" id="punto">Asesorías de prácticas con orientación grupal</option>
+                <option value="0">No Posee</option>
+            </select> -->
+
+        <label for="categoria">Seleccione el Tipo de Publicación:</label>
+        <select id="tipo_publicacion">
+            <option value="">Seleccione una opción</option>
+            <option value="10">Artículos en revistas indexadas por Colciencias</option>
+            <option value="5">Artículos en medios reconocidos</option>
+            <option value="20">Libros con ISBN</option>
+            <option value="5">Capítulos de libros con ISBN</option>
+            <option value="10">Módulos con ISBN</option>
+            <option value="20">Software registrado con D.A</option>
+            <option value="60">Patentes</option>
+            <option value="5">Asesor de monografías o proyectos de grado</option>
+            <option value="2">Asesorías de prácticas con orientación grupal</option>
+            <option value="0">No Posee</option>
+        </select>
+    <button onclick="agregarPublicacion()">Agregar</button>
+
+    <ul id="lista_publicaciones"></ul>
+
+
+        <h4>REMUNERACION DEL PROFESOR OCASIONAL</h4>
+        <label for="categoria">Cualificación en postgrado</label>
+        <select id="c_postgrado" onchange="mostrarAlerta()">
+            <option value="">Seleccione una opción</option>
+            <option value="0.10">Especialización</option>
+            <option value="0.45">Maestría</option>
+            <option value="0.90">Doctorado</option>
+            <option value="0">PostDoctorado</option>
+            <option value="0">No Posee</option>
+        </select>
+
+        <label for="categoria">Categoria Semillero</label>
+        <select id="c_semillero" onchange="mostrarAlerta2()">
+            <option value="">Seleccione una opción</option>
+            <option value="0.56">A1</option>
+            <option value="0.47">A</option>
+            <option value="0.42">B</option>
+            <option value="0.38">C</option>
+            <option value="0.33">Reconocidos por MINCIENCIAS</option>
+            <option value="0.19">Semillero</option>
+            <option value="0">No Posee</option>
+        </select>
+
+
+        <label for="puntos">Total de Puntos Obtenidos:</label>
+        <input type="number" id="puntos" min="0" value="0" readonly class="puntoslab"> <!-- Ahora es de solo lectura -->
+
+
+        <button onclick="calcularSalario()">Calcular Salario</button>
+        <div style="color: red;">
+            <p id="resultado"></p>
+        </div>
+
+    </div>
+
+    <script src="logica.js">
+    </script>
+</body>
+</html>

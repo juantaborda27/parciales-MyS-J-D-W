@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Salarial - Decreto 1279</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Calculadora Salarial Docente</h1>
+            <p>Basada en el Decreto 1279 de 2002</p>
+        </header>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+            <div class="step-labels">
+                <div class="step-label active">Información Básica</div>
+                <div class="step-label">Formación Académica</div>
+                <div class="step-label">Experiencia</div>
+                <div class="step-label">Producción Académica</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content"> 
+                <h2>Información Básica del Docente</h2>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoria">Categoría en el escalafón:</label>
+                    <select id="categoria" class="form-control">
+                        <option value="">Seleccione una categoría</option>
+                        <option value="instructor_auxiliar">Instructor o Profesor Auxiliar</option>
+                        <option value="instructor_asociado">Instructor Asociado (Solo U. Nacional)</option>
+                        <option value="asistente">Profesor Asistente</option>
+                        <option value="asociado">Profesor Asociado</option>
+                        <option value="titular">Profesor Titular</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dedicacion">Dedicación:</label>
+                    <select id="dedicacion" class="form-control">
+                        <option value="1">Tiempo Completo</option>
+                        <option value="0.5">Medio Tiempo</option>
+                        <option value="0.25">Cuarto de Tiempo</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="vinculacion">Tipo de vinculación:</label>
+                    <select id="vinculacion" class="form-control">
+                        <option value="concurso">Vinculado por concurso</option>
+                        <option value="reingreso">Reingreso a la carrera docente</option>
+                        <option value="decreto1444">Régimen anterior (Decreto 1444)</option>
+                        <option value="acogidoDecreto1279">Acogido al Decreto 1279</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="desempeño">¿Tiene evaluación de desempeño destacado?</label>
+                    <select id="desempeño" class="form-control">
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="aniosExperiencia">Años de experiencia en la universidad:</label>
+                    <input type="number" id="aniosExperiencia" class="form-control" min="0" step="0.1" value="0">
+                </div>
+                
+                <div class="buttons">
+                    <button id="btnSiguiente1" class="btn btn-primary">Siguiente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Calculadora basada en el Decreto 1279 de 2002 - Régimen Salarial y Prestacional de los Docentes de las Universidades Estatales</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
