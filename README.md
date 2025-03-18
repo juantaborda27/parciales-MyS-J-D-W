@@ -4,3 +4,5 @@ En este repositorio podra encontrar la respuesta a todos los enunciados propuest
 ## Juan Humberto Taborda 
 ## Diego Alonso Yelamo
 ## William David Arroyo
+
+Link Video Explicativo: https://www.youtube.com/watch?v=EGmKxCvZX1E 
