@@ -7,7 +7,7 @@ En este repositorio podra encontrar la respuesta a todos los enunciados propuest
 ## Diego Alonso Yelamo
 ## William David Arroyo
 
-Link video Explicativo #2: 
+Link video Explicativo #2: https://www.youtube.com/watch?v=ytqDQhPDuz0 
 
 Link Video Explicativo #1: https://www.youtube.com/watch?v=EGmKxCvZX1E 
 
