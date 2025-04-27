@@ -7,6 +7,9 @@ En este repositorio podra encontrar la respuesta a todos los enunciados propuest
 ## Diego Alonso Yelamo
 ## William David Arroyo
 
-Link Video Explicativo: https://www.youtube.com/watch?v=EGmKxCvZX1E 
+Link video Explicativo #2: 
+
+Link Video Explicativo #1: https://www.youtube.com/watch?v=EGmKxCvZX1E 
+
 
 Para ejecutar los codigos de python ingresar en la ubicacion del arcgivo python "PUNTO 5.py" para no obtener errores ( tener las librerias requeridas descargadas)
